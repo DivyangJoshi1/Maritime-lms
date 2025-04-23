@@ -10,6 +10,7 @@ import {
   Link,
 } from '@mui/material';
 import { registerUser } from '../../services/authService';
+import bgImage from '../../assets/bg.jpeg';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -43,14 +44,29 @@ const Register = () => {
 
   return (
     <Box
-      sx={{
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f4f6f8',
-      }}
+    sx={{
+      height: '100vh',
+      width: '100vw',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'relative',
+      overflow: 'hidden',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        filter: 'brightness(0.5)',
+        zIndex: -1,
+      },
+    }}
     >
       <Paper
   elevation={5}

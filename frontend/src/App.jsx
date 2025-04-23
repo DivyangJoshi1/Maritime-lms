@@ -20,19 +20,19 @@ const App = () => {
           <Route path="/reset-password" element={<ResetPassword />} />
           
           <Route element={<ProtectedRoute allowedRoles={['SuperAdmin']} />}>
-            <Route path="/superadmin" element={<SuperAdminDashboard />} />
+            <Route path="/dashboard/superadmin" element={<SuperAdminDashboard />} />
           </Route>
           
           <Route element={<ProtectedRoute allowedRoles={['CompanyAdmin']} />}>
-            <Route path="/companyadmin" element={<CompanyAdminDashboard />} />
+            <Route path="/dashboard/companyadmin" element={<CompanyAdminDashboard />} />
           </Route>
 
           <Route element={<ProtectedRoute allowedRoles={['SubAdmin']} />}>
-            <Route path="/subadmin" element={<SubAdminDashboard />} />
+            <Route path="/dashboard/subadmin" element={<SubAdminDashboard />} />
           </Route>
 
           <Route element={<ProtectedRoute allowedRoles={['CrewMember']} />}>
-            <Route path="/crew" element={<CrewDashboard />} />
+            <Route path="/dashboard/crew" element={<CrewDashboard />} />
           </Route>
 
           <Route path="*" element={<NotFound />} />

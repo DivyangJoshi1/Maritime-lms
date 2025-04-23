@@ -11,6 +11,7 @@ import {
 } from '@mui/material';
 import { loginUser } from '../../services/authService';
 import { AuthContext } from '../../context/AuthContext';
+import bgImage from '../../assets/bg.jpeg';
 
 const Login = () => {
   const { login } = useContext(AuthContext);
@@ -30,10 +31,10 @@ const Login = () => {
       login(res);
 
       // redirect based on role
-      if (res.user.role === 'SuperAdmin') navigate('/superadmin');
-      else if (res.user.role === 'CompanyAdmin') navigate('/companyadmin');
-      else if (res.user.role === 'SubAdmin') navigate('/subadmin');
-      else if (res.user.role === 'CrewMember') navigate('/crew');
+      if (res.user.role === 'SuperAdmin') navigate('/dashboard/superadmin');
+      else if (res.user.role === 'CompanyAdmin') navigate('/dashboard/companyadmin');
+      else if (res.user.role === 'SubAdmin') navigate('/dashboard/subadmin');
+      else if (res.user.role === 'CrewMember') navigate('/dashboard/crew');
       else navigate('/');
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed');
@@ -42,15 +43,29 @@ const Login = () => {
 
   return (
     <Box
-      sx={{
-        height: '100vh',
-        width: '100vw',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#f4f6f8',
-        padding: 0,
-      }}
+    sx={{
+      height: '100vh',
+      width: '100vw',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'relative',
+      overflow: 'hidden',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundImage: `url(${bgImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        filter: 'brightness(0.5)',
+        zIndex: -1,
+      },
+    }}
     >
       <Paper
         elevation={6}
