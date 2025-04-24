@@ -5,6 +5,7 @@ import ResetPassword from './pages/auth/ResetPassword';
 import NotFound from './pages/NotFound';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
+
 import SuperAdminDashboard from './pages/dashboard/SuperAdminDashboard';
 import CrewDashboard from './pages/dashboard/CrewDashboard';
 import CompanyAdminDashboard from './pages/dashboard/CompanyAdminDashboard';
@@ -18,11 +19,11 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/reset-password" element={<ResetPassword />} />
-          
+
           <Route element={<ProtectedRoute allowedRoles={['SuperAdmin']} />}>
             <Route path="/dashboard/superadmin" element={<SuperAdminDashboard />} />
           </Route>
-          
+
           <Route element={<ProtectedRoute allowedRoles={['CompanyAdmin']} />}>
             <Route path="/dashboard/companyadmin" element={<CompanyAdminDashboard />} />
           </Route>
@@ -36,7 +37,6 @@ const App = () => {
           </Route>
 
           <Route path="*" element={<NotFound />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </Router>
     </AuthProvider>

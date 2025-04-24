@@ -1,18 +1,55 @@
+import React, { useRef } from "react";
 import AdminLayout from "../../layouts/AdminLayout";
-import { Box, Typography, Paper } from "@mui/material";
+import { Box } from "@mui/material";
+import OverviewWidgets from "../../components/superadmin/OverviewWidgets";
+import CompanyList from "../../components/superadmin/CompanyList";
+import CourseList from "../../components/superadmin/CourseList";
+import AnalyticsPanel from "../../components/superadmin/AnalyticsPanel";
+import ActivityLogs from "../../components/superadmin/ActivityLogs";
+import CrewMembersTable from "../../components/superadmin/CrewMembersTable";
+import NoticesPanel from "../../components/superadmin/NoticesPanel";
+import { DashboardScrollContext } from "../../context/DashboardScrollContext";
 
 const SuperAdminDashboard = () => {
+  const refs = {
+    overview: useRef(null),
+    courses: useRef(null),
+    analytics: useRef(null),
+    logs: useRef(null),
+    crew: useRef(null),
+    notices: useRef(null),
+  };
+
+  const sectionStyle = {
+    scrollMarginTop: "80px", // Match your Header height exactly
+    marginTop: "40px",       // Spacing between sections
+  };
+
   return (
-    <AdminLayout>
-      <Paper elevation={3} sx={{ p: 4, borderRadius: 3, backgroundColor: "#f9f9f9" }}>
-        <Typography variant="h4" fontWeight={600} gutterBottom>
-          Welcome, SuperAdmin 👋
-        </Typography>
-        <Typography variant="body1" color="text.secondary">
-          You have full access to manage companies, courses, analytics, and user roles.
-        </Typography>
-      </Paper>
-    </AdminLayout>
+    <DashboardScrollContext.Provider value={refs}>
+      <AdminLayout>
+        <Box sx={{ px: 2, py: 4, }}>
+          <div ref={refs.overview} style={sectionStyle}>
+            <OverviewWidgets />
+          </div>
+          <div ref={refs.courses} style={sectionStyle}>
+            <CourseList />
+          </div>
+          <div ref={refs.analytics} style={sectionStyle}>
+            <AnalyticsPanel />
+          </div>
+          <div ref={refs.logs} style={sectionStyle}>
+            <ActivityLogs />
+          </div>
+          <div ref={refs.crew} style={sectionStyle}>
+            <CrewMembersTable />
+          </div>
+          <div ref={refs.notices} style={sectionStyle}>
+            <NoticesPanel />
+          </div>
+        </Box>
+      </AdminLayout>
+    </DashboardScrollContext.Provider>
   );
 };
 
