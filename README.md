@@ -80,13 +80,13 @@ Open your browser and navigate to:
 ### 4. backend
 
 ```bash
+cd backend
 npm install
 ```
 
 ### 5. Navigate to `backend` folder and start the backend server
 
 ```bash
-cd backend
 node server.js
 ```
 
