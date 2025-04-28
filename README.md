@@ -93,7 +93,7 @@ node server.js
 The server will start on:  
 [http://localhost:5000](http://localhost:5000)
 
-### 5. start monogodb
+### 6. start monogodb
 
 ```bash
 mongod
