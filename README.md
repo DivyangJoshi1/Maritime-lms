@@ -39,7 +39,7 @@ Open your browser and navigate to:
 - **Reset Password Page**: `/reset-password`
 
 ✅ Authentication flow is fully functional.  
-❗ Dashboard integration is under development. Althogh here is postman documentation of fully functional backend.
+❗ Dashboard integration is under development. Althogh here is postman documentation of fully functional backend : https://documenter.getpostman.com/view/40012166/2sB2j1hsLc
 
 ---
 
