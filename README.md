@@ -97,6 +97,7 @@ The server will start on:
 
 ```bash
 mongod
+```
 
 ---
 
