@@ -107,13 +107,3 @@ JWT_SECRET=your_jwt_secret
 ![WhatsApp Image 2025-04-28 at 14 14 43_fc96f721](https://github.com/user-attachments/assets/7326bbeb-1f63-498f-a646-8bb16a668206)
 
 ---
-
-## 📌 Notes
-
-- Run backend first, then frontend.
-- Ensure your PostgreSQL database is properly configured.
-- No deployment is required — you can run and test the app fully on your local machine.
-
----
-
-# 🎯 You're all set! Happy coding!
