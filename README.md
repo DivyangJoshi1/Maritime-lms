@@ -2,30 +2,63 @@
 
 Local Setup Instructions for running the Maritime LMS application on your local machine.
 
+## Tech Stack
+### Frontend
+- **React**: Frontend library for building responsive UI.
+- **React Router DOM**: Client-side routing for navigating between pages.
+- **Axios**: For making API requests to the backend.
+- **Material UI (MUI)**: For styling components and creating a clean, professional UI.
+
+### Frontend
+- **Node.js**: JavaScript runtime environment for server-side development.
+- **Express.js**: Web application framework for Node.js APIs.
+- **Sequelize ORM**: For interacting with the PostgreSQL database (Course, Company, User-Course management).
+- **Mongoose ORM**: For interacting with MongoDB (Authentication, User Management).
+
+### Database
+1. Mongodb : User registration and authentication
+             Managing user roles and permissions
+2. PostgreSQL: Managing Courses
+               Managing Companies
+               Tracking assigned courses and user progress
+### Others:
+**JWT (JSON Web Tokens)** – For secure user authentication and authorization.
+**Bcrypt.js** – For hashing user passwords securely.
+**dotenv** – For managing environment variables.
+
+**Special Highlight:** MongoDB is used exclusively for Authentication and User Management because of its flexible document structure and fast access.
+PostgreSQL is used for structured data like Courses, Companies, and Course Assignments where relational integrity is important.
+
+
+
 ---
-
-## 🚀 Frontend (React App)
-
-### 1. Clone the repository
+## Clone the repository
 
 ```bash
-git clone <frontend-repo-url>
-cd <frontend-folder-name>
+git clone <maritime-lms-repo-url>
+cd maritime-lms
 ```
 
-### 2. Install dependencies
+
+## Install dependencies
+### 1. Frontend
+
+go to frontend folder
+```bash
+cd frontend 
+```
 
 ```bash
 npm install
 ```
 
-### 3. Start the frontend server
+### 2. Start the frontend server
 
 ```bash
 npm run dev
 ```
 
-### 4. Visit the application
+### 3. Visit the application
 
 Open your browser and navigate to:  
 [http://localhost:5173](http://localhost:5173)
@@ -43,30 +76,27 @@ Open your browser and navigate to:
 
 ---
 
-## 🛠️ Backend (Node.js Express App)
 
-### 1. Clone the repository
-
-```bash
-git clone <backend-repo-url>
-cd <backend-folder-name>
-```
-
-### 2. Install dependencies
+### 4. backend
 
 ```bash
 npm install
 ```
 
-### 3. Navigate to `src` directory and start the backend server
+### 5. Navigate to `backend` folder and start the backend server
 
 ```bash
-cd src
+cd backend
 node server.js
 ```
 
 The server will start on:  
 [http://localhost:5000](http://localhost:5000)
+
+### 5. start monogodb
+
+```bash
+mongod
 
 ---
 
