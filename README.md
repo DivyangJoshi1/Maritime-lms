@@ -1,7 +1,5 @@
 # Maritime LMS
 
-Local Setup Instructions for running the Maritime LMS application on your local machine.
-
 ## Tech Stack
 ### Frontend
 - **React**: Frontend library for building responsive UI.
@@ -32,6 +30,8 @@ PostgreSQL is used for structured data like Courses, Companies, and Course Assig
 
 
 ---
+Local Setup Instructions for running the Maritime LMS application on your local machine.
+
 ## Clone the repository
 
 ```bash
